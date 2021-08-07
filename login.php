@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>Prisijungti</title>
     <style>
         html {
@@ -29,7 +30,7 @@
 
         .left-column, .right-column {
             float:left;
-            height: 26.8889rem;
+            height: 322px;
         }
 
         .left-column {
@@ -45,7 +46,7 @@
 
         .left-column-container {
             margin-top: 1.6667rem;
-            height: 23.5556rem;
+            height: 262px;
             background-color: #0069BA;
             background-size: cover;
             padding-left: 2.2222rem;

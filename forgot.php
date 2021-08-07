@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>Priminti prisijungima</title>
+
     <style>
         html {
             font-size: 18px;
@@ -22,7 +24,7 @@
         .container {
             width: 42.05%;
             position: absolute;
-            top: 50%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
@@ -30,6 +32,7 @@
         .left-column, .right-column {
             float:left;
             height: 26.8889rem;
+            
         }
 
         .left-column {
@@ -41,6 +44,7 @@
         .right-column {
             width: 60%;
             background-color: #fff;
+            height: 241px;
         }
 
         .left-column-container {

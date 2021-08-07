@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>12Registracija</title>
     <style>
         html {
@@ -35,7 +36,6 @@
         .left-column {
             background-color: transparent;
             width: 40%;
-
         }
 
         .right-column {
@@ -47,7 +47,7 @@
             margin-top: 1.6667rem;
             height: 23.5556rem;
             background-color: #fff;
-            background: transparent url('img/mountain.png') 0% 0% no-repeat padding-box;
+            background: transparent url("mountain.png") 0% 0% no-repeat padding-box;
             background-size: cover;
             padding-left: 2.2222rem;
             position: relative;
@@ -230,8 +230,7 @@
         }
         
         }
-
-        
+       
 
     </style>
 
