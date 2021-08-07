@@ -239,6 +239,7 @@
     </style>
 
 </head>
+
 <body>
 
     <div class="container">
@@ -254,25 +255,43 @@
                 </div>
             </div>
         </div>
+
+
         <div class="right-column">
             <div class="right-column-container">
                 <span class="close">x</span>
                 
+                <form action="signup.php">
+
                 <div class="input">
                     <label for="email">E-mail</label>
                     <input placeholder="Enter your E-mail" type="text" id="email" name="email" />
                 </div>
                 
-                
-
                 <div class="right-column-bottom-action">
                     <button class="btn">Remaind</button>
                     <p>or</p>
-                    <a href="#">Sign up</a>
+                    <a href="signup.php">Sign up</a>
                 </div>
+            
+            </form>
+
             </div>
         </div>
     </div>
-    
+
+
+<?php
+
+ if(isset($_COOKIE["login"]) && isset($_COOKIE["rules"])){
+    header("Location:manopaskyra.php");
+}
+
+// is forgot.php- nukreipia i signup.php- viskas ok 
+
+?>
+
+
+
 </body>
 </html>

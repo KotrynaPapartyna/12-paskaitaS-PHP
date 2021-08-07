@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <title>Prisijungti</title>
+    
     <style>
         html {
             font-size: 18px;
@@ -229,14 +230,10 @@
             width: 100%;
         }
         
-        }
-
-        
+        }      
 
     </style>
-
-</head>
-<body>
+    
 
     <div class="container">
     
@@ -251,27 +248,103 @@
                 </div>
             </div>
         </div>
-        <div class="right-column">
-            <div class="right-column-container">
-                <span class="close">x</span>
-                <div class="input">
-                    <label for="username">Username</label>
-                    <input placeholder="Enter your user name" type="text" id="username" name="username" />
-                </div>
-                
-                <div class="input">
-                    <label for="password">Password</label>
-                    <input placeholder="Enter your password" type="password" id="password" name="password" />
-                </div>
-                
-                <div class="right-column-bottom-action">
-                    <button class="btn">Login</button>
-                    <p>or</p>
-                    <a href="#">Forgot password</a>
-                </div>
+
+
+    <div class="right-column">
+        <div class="right-column-container">
+            <span class="close">x</span>
+
+    <form action="login.php" method="get">
+
+            <div class="input">
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Enter your user name"/>
             </div>
+                
+            <div class="input">
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Enter your password"/>
+            </div>
+                
+            <div class="right-column-bottom-action">
+                <button class="btn" name="login">Login</button>
+                <p>or</p>
+                <a href="forgot.php">Forgot password</a>
+            </div>
+
+        </form>    
+
         </div>
     </div>
+</div>
+
+
+<?php
+
+// isveda teisingus duomenis- kad prisijunges
+// dar reikia padaryti kad suvedus teisingus duomenis nukreiptu i manopaskyra.php
+// arba atvaizduotu po prisijungimo apacioje 
+
+
+
+    if (isset($_GET["login"])) {
+
+        $registruotiVartotojai = array(
+            array(
+                "username" => "Petras", 
+                "password" => "Petras1", 
+                "rules" => 1 
+            ),
+            array(
+                "username" => "Antanas", 
+                "password" => "Antanas1", 
+                "rules" => 2 
+            ),    
+        );
+
+    if (isset($_GET["username"]) && !empty($_GET["username"]) && isset($_GET["password"]) && !empty($_GET["password"])) {
+        
+        $vardas = $_GET["username"];
+        $slaptazodis = $_GET["password"];
+
+        foreach($registruotiVartotojai as $elementas) {
+            
+            $teisingasDuomuo = false;
+            $laikinasis_vardas = "";
+            $laikinasis_teises = "";
+            if($vardas == $elementas["username"] && $slaptazodis == $elementas["password"]) {
+                $teisingasDuomuo = true;
+                $laikinasis_vardas = $elementas["username"];
+                $laikinasis_teises = $elementas["rules"];
+                break;
+            }
+        }
+    }
+
+        if($teisingasDuomuo) {
+
+            // echo $laikinasis_vardas;
+            // echo $laikinasis_teises;
+           
+            echo "Sveikas atvykes,"."<br>". $laikinasis_vardas;
+
+        //("login", $laikinasis_vardas, time() + 3600, "/");
+        //setcookie("rules", $laikinasis_teises, time() + 3600, "/");
+
+        //header("Location: login.php");
+
+        } else {
+            echo "Prisijungimas nesėkmingas-iveskite tesingus prisijungimo duomenis";
+        }
     
-</body>
-</html>
+
+    } else {
+        echo "Laukeliai yra tusti-iveskite prisijungimo duomenis";
+    }
+// REIKIA SUSITVARKYTI SU COOKIES 
+
+?>
+
+
+</head>
+<body>

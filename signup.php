@@ -235,6 +235,7 @@
     </style>
 
 </head>
+
 <body>
 
     <div class="container">
@@ -253,18 +254,25 @@
         <div class="right-column">
             <div class="right-column-container">
                 <span class="close">x</span>
+
+
+            <form action="signup.php">
+
                 <div class="input">
                     <label for="username">Username</label>
                     <input placeholder="Enter your user name" type="text" id="username" name="username" />
                 </div>
+
                 <div class="input">
                     <label for="email">E-mail</label>
                     <input placeholder="Enter your E-mail" type="text" id="email" name="email" />
                 </div>
+
                 <div class="input">
                     <label for="password">Password</label>
                     <input placeholder="Enter your password" type="password" id="password" name="password" />
                 </div>
+
                 <div class="input">
                     <label for="repeat-password">Repeat password</label>
                     <input placeholder="Enter your password" type="password" id="repeat-password" name="repeat-password" />
@@ -273,11 +281,24 @@
                 <div class="right-column-bottom-action">
                     <button class="btn">Get started</button>
                     <p>or</p>
-                    <a href="#">Sign in</a>
+                    <a href="login.php">Sign in</a>
                 </div>
+
+            </form>
+
             </div>
         </div>
     </div>
+
+<?php
+
+// Sign in funkcija veikia- nukreipia i login.php
+
+if(isset($_COOKIE["login"])) {
+    header("Location:manopaskyra.php"); 
+}
+
+?>
     
 </body>
 </html>
