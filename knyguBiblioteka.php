@@ -124,11 +124,11 @@ $kategorijaDetektyvai = array(
 );
 
 // patikrinimui 
-var_dump($kategorijaIstorines); 
-var_dump($kategorijaRomanai); 
-var_dump($kategorijaVaikiskos);
-var_dump($kategorijaFantastines); 
-var_dump($kategorijaDetektyvai);
+// var_dump($kategorijaIstorines); 
+// var_dump($kategorijaRomanai); 
+// var_dump($kategorijaVaikiskos);
+// var_dump($kategorijaFantastines); 
+// var_dump($kategorijaDetektyvai);
  
 ?>
  
