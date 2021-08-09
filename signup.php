@@ -294,7 +294,7 @@
 
 // Sign in funkcija veikia- nukreipia i login.php
 
-if(isset($_COOKIE["login"])) {
+if(isset($_COOKIE["prisijungti"]) && isset($_COOKIE["teises"])) {
     header("Location:manopaskyra.php"); 
 }
 

@@ -254,20 +254,20 @@
         <div class="right-column-container">
             <span class="close">x</span>
 
-    <form action="login.php" method="get">
+    <form action="login.php" method="post">
 
             <div class="input">
                 <label for="username">Username</label>
-                <input type="text" name="username" placeholder="Enter your user name"/>
+                <input type="text" name="username" id="username" placeholder="Enter your user name"/>
             </div>
                 
             <div class="input">
                 <label for="password">Password</label>
-                <input type="password" name="password" placeholder="Enter your password"/>
+                <input type="password" name="password" id="password" placeholder="Enter your password"/>
             </div>
                 
             <div class="right-column-bottom-action">
-                <button class="btn" name="login">Login</button>
+                <button type="submit" class="btn" name="prisijungti">Login</button>
                 <p>or</p>
                 <a href="forgot.php">Forgot password</a>
             </div>
@@ -281,31 +281,25 @@
 
 <?php
 
-// isveda teisingus duomenis- kad prisijunges
-// dar reikia padaryti kad suvedus teisingus duomenis nukreiptu i manopaskyra.php
-// arba atvaizduotu po prisijungimo apacioje 
-
-
-
-    if (isset($_GET["login"])) {
+    if (isset($_POST["prisijungti"])) {
 
         $registruotiVartotojai = array(
             array(
                 "username" => "Petras", 
                 "password" => "Petras1", 
-                "rules" => 1 
+                "teises" => 1 
             ),
             array(
                 "username" => "Antanas", 
                 "password" => "Antanas1", 
-                "rules" => 2 
+                "teises" => 2 
             ),    
         );
 
-    if (isset($_GET["username"]) && !empty($_GET["username"]) && isset($_GET["password"]) && !empty($_GET["password"])) {
+    if (isset($_POST["username"]) && !empty($_POST["username"]) && isset($_POST["password"]) && !empty($_POST["password"])) {
         
-        $vardas = $_GET["username"];
-        $slaptazodis = $_GET["password"];
+        $vardas = $_POST["username"];
+        $slaptazodis = $_POST["password"];
 
         foreach($registruotiVartotojai as $elementas) {
             
@@ -315,33 +309,31 @@
             if($vardas == $elementas["username"] && $slaptazodis == $elementas["password"]) {
                 $teisingasDuomuo = true;
                 $laikinasis_vardas = $elementas["username"];
-                $laikinasis_teises = $elementas["rules"];
+                $laikinasis_teises = $elementas["teises"];
                 break;
             }
         }
-    }
-
+    
         if($teisingasDuomuo) {
 
             // echo $laikinasis_vardas;
             // echo $laikinasis_teises;
            
-            echo "Sveikas atvykes,"."<br>". $laikinasis_vardas;
+        echo "Prisijungimas sėkmingas";
 
-        //("login", $laikinasis_vardas, time() + 3600, "/");
-        //setcookie("rules", $laikinasis_teises, time() + 3600, "/");
+        //setcookie ("prisijungti", $laikinasis_vardas, time() + 3600, "/");
+        //setcookie("teises", $laikinasis_teises, time() + 3600, "/");
 
-        //header("Location: login.php");
+        // header("Location: login.php");
 
         } else {
             echo "Prisijungimas nesėkmingas-iveskite tesingus prisijungimo duomenis";
         }
     
-
-    } else {
-        echo "Laukeliai yra tusti-iveskite prisijungimo duomenis";
+        } else {
+            echo "Laukeliai yra tusti-iveskite prisijungimo duomenis";
+        }
     }
-// REIKIA SUSITVARKYTI SU COOKIES 
 
 ?>
 

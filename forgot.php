@@ -263,16 +263,16 @@
                 
                 <form action="signup.php">
 
-                <div class="input">
-                    <label for="email">E-mail</label>
-                    <input placeholder="Enter your E-mail" type="text" id="email" name="email" />
-                </div>
-                
-                <div class="right-column-bottom-action">
-                    <button class="btn">Remaind</button>
-                    <p>or</p>
-                    <a href="signup.php">Sign up</a>
-                </div>
+                    <div class="input">
+                        <label for="email">E-mail</label>
+                        <input placeholder="Enter your E-mail" type="text" id="email" name="email" />
+                    </div>
+                    
+                    <div class="right-column-bottom-action">
+                        <button class="btn">Remaind</button>
+                        <p>or</p>
+                        <a href="signup.php">Sign up</a>
+                    </div>
             
             </form>
 
@@ -283,7 +283,7 @@
 
 <?php
 
- if(isset($_COOKIE["login"]) && isset($_COOKIE["rules"])){
+ if(isset($_COOKIE["prisijungti"]) && isset($_COOKIE["teises"])){
     header("Location:manopaskyra.php");
 }
 
