@@ -26,16 +26,19 @@
 </head>
 <body>
 
-<div>
+
     <form action="knyguBiblioteka.php" method="get">
-        <button type="submit" name="romanai">Romanai</button>
-        <button type="submit" name="istorines">Istorines</button>
-        <button type="submit" name="fantastines">Fantastines</button>
-        <button type="submit" name="vaikiskos">Vaikiskos</button>
-        <button type="submit" name="detektyvai">Detektyvai</button>
-        <button type="submit" name="visos">Visos kategorijos</button>
-    </form>
-</div>
+        <div class="knygosKategorija">
+            <h2>Knygu kategorijos:</h2>
+        </div>
+            <button type="submit" name="romanai">Romanai</button>
+            <button type="submit" name="istorines">Istorines</button>
+            <button type="submit" name="fantastines">Fantastines</button>
+            <button type="submit" name="vaikiskos">Vaikiskos</button>
+            <button type="submit" name="detektyvai">Detektyvai</button>
+            <button type="submit" name="visos">Visos kategorijos</button>
+        </form>
+
 
 
 <?php
