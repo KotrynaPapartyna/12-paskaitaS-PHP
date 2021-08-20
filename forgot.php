@@ -280,14 +280,13 @@
         </div>
     </div>
 
-
 <?php
 
  if(isset($_COOKIE["prisijungti"]) && isset($_COOKIE["teises"])){
     header("Location:manopaskyra.php");
 }
 
-// is forgot.php- nukreipia i signup.php- viskas ok 
+// paspaudus ant Sign.up- nukreipia i registracijos forma 
 
 ?>
 

@@ -264,6 +264,7 @@
             <div class="input">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" placeholder="Enter your password"/>
+                
             </div>
                 
             <div class="right-column-bottom-action">
@@ -316,15 +317,13 @@
     
         if($teisingasDuomuo) {
 
-            // echo $laikinasis_vardas;
-            // echo $laikinasis_teises;
-           
+        
         echo "Prisijungimas sėkmingas";
 
         //setcookie ("prisijungti", $laikinasis_vardas, time() + 3600, "/");
         //setcookie("teises", $laikinasis_teises, time() + 3600, "/");
 
-        // header("Location: login.php");
+        // header("Location: forgot.php");
 
         } else {
             echo "Prisijungimas nesėkmingas-iveskite tesingus prisijungimo duomenis";
@@ -334,6 +333,9 @@
             echo "Laukeliai yra tusti-iveskite prisijungimo duomenis";
         }
     }
+
+// suvedus prisijungimo duomenis- Prisijungimas sekmingas
+// paspaudus forgot password- nukreipia i forgot.php- viskas ok 
 
 ?>
 
