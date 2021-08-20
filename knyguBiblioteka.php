@@ -93,94 +93,99 @@
 $kategorijaRomanai = array(
     array(
         "pavadinimas" => "knyga1","autorius" => "autorius1",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"),"kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius2",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius3",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga4","autorius" => "autorius4",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga5","autorius" => "autorius5",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     );
 
 $kategorijaIstorines = array(
     array(
         "pavadinimas" => "knyga1","autorius" => "autorius1",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius2",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius3",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"),"kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga4","autorius" => "autorius4",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga5","autorius" => "autorius5",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     );
 
 $kategorijaFantastines = array(
     array(
         "pavadinimas" => "knyga1","autorius" => "autorius1",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius2",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius3",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga4","autorius" => "autorius4",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga5","autorius" => "autorius5",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     ); 
     
 $kategorijaVaikiskos = array(
     array(
         "pavadinimas" => "knyga1","autorius" => "autorius1",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius2",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius3",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga4","autorius" => "autorius4",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga5","autorius" => "autorius5",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     ); 
 
 $kategorijaDetektyvai = array(
     array(
         "pavadinimas" => "knyga1","autorius" => "autorius1",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius2",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga2","autorius" => "autorius3",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga4","autorius" => "autorius4",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     array(
         "pavadinimas" => "knyga5","autorius" => "autorius5",
-        "puslapiaiSK"=>rand(200,400)."puslapiai"), "kaina"=>"kaina",
+        "puslapiaiSK"=>rand(200,400)." puslapiai","kaina"=>rand(2,10).".".rand(0,99)."eur"),
     );
 
-    
+    // visu kategoriju masyvu isvedimas 
+    var_dump($kategorijaRomanai);
+    //var_dump($kategorijaFantastines);
+    //var_dump($kategorijaIstorines);
+    //var_dump($kategorijaVaikiskos);
+    //var_dump($kategorijaDetektyvai);
 
 ?>
  
