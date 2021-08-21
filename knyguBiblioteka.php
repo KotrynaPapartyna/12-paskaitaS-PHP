@@ -13,7 +13,7 @@
     <style>
         h2 {
             position:relative;
-            color: plum;
+            color: black;
             text-align: center;
         }
         
@@ -23,10 +23,14 @@
         }
 
         button {
-            background-color:lightseagreen;
-            margin-top: 30px;         
+            background-color:lightsalmon;
+            border-radius: 30px;
+            margin-top: 30px;
+            font-style: italic;   
+            font-weight:bold;  
+            
         }
-
+        
         .top-information,.bottom-information {
             padding: 0 20px;
             }
@@ -34,66 +38,46 @@
         table tbody tr:hover, table tbody tr:hover {
             background-color: rgba(0, 0, 0, 0.05);
             }
+        
+
     </style>
 
 </head>
 <body>
+        <h2>Knygų biblioteka:</h2>
     
-    <form action="knyguBiblioteka.php" method="get">
-        <div class="knygosKategorija">
-            <h2>Knygų kategorijos:</h2>
-        </div>
-            <button type="submit" name="romanai">Romanai</button>
-            <button type="submit" name="istorines">Istorines</button>
-            <button type="submit" name="fantastines">Fantastines</button>
-            <button type="submit" name="vaikiskos">Vaikiskos</button>
-            <button type="submit" name="detektyvai">Detektyvai</button>
-            <button type="submit" name="visos">Rodyti visas knygas</button>
-        </form>
-     
-    <table class="table table-hover">
-        <thead>
-            <tr>
-            <th scope="col">Pavadinimas</th>
-            <th scope="col">Autorius</th>
-            <th scope="col">Puslapiu skaicius</th>
-            <th scope="col">Kaina</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <th scope="row1"></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            </tr>
-            <tr>
-            <th scope="row2"></th>
-            <td></td>
-            <td></td>
-            <td></td>
-            </tr>
-        </tbody>
-    </table>
+    <?php
+        echo '<form action="knyguBiblioteka.php" method="post">';
+        echo  '<div class="knygosKategorija">';
+            
+        echo '</div>';
+            echo '<button type="submit" name="romanai">Romanai</button>';
+            echo '<button type="submit" name="istorines">Istorines</button>';
+            echo '<button type="submit" name="fantastines">Fantastines</button>';
+            echo '<button type="submit" name="vaikiskos">Vaikiskos</button>';
+            echo '<button type="submit" name="detektyvai">Detektyvai</button>';
+            echo '<button type="submit" name="visos">Rodyti visas knygas</button>';
+        echo '</form>';
+    ?>
 
 <?php
 
 // 1. Sukurti ir sustilizuotį tokią lentelę pagal pavyzdį:
-// https://codepen.io/motiejus1/pen/rNyWPey
+// https://codepen.io/motiejus1/pen/rNyWPey +
 // 2. Sukurti dvimatį masyvą, kuriame būtų informacija apie knygos kategoriją, 
 // bei knygos priklausančios kategorijai.+
-// Masyvo struktūrą sugalvoti patiems. Testavimui sukurti bent 5 kategorijas, 
+// Masyvo struktūrą sugalvoti patiems. Testavimui sukurti bent 5 kategorijas, +
 // kurios turi nuo 5 iki 15 knygų.+
 // Pavyzdinė informacija apie knygą: pavadinimas, autorius, puslapių skaičius, kategorija+
 // 3. Virš sukurtos lentelės atvaizduoti tiek mygtukų, kiek yra kategorijų masyve, 
 // mygtuko pavadinimas - kategorijos pavadinimas. +
-// Mygtukai turi būti atvaizduoti su PHP pagal masyvą. 
+// Mygtukai turi būti atvaizduoti su PHP pagal masyvą. +
 // Taip pat sukurti mygtuką "Rodyti visas knygas".+
-// 4. Masyvo informaciją atvaizduoti lentelėje.
-// 5. Sukurti mygtukai turi išfiltruoti knygas. 
+// 4. Masyvo informaciją atvaizduoti lentelėje. +
+// 5. Sukurti mygtukai turi išfiltruoti knygas. +
 // T.y. paspaudus kategorijos mygtuką, lentelėje turi būti rodomos tik tos knygos, 
-// kurios priklauso tai kategorijai. 
-// Paspaudus mygtuką "Rodyti visas knygas", atvaizduojamos visos knygos.  
+// kurios priklauso tai kategorijai. +
+// Paspaudus mygtuką "Rodyti visas knygas", atvaizduojamos visos knygos. + 
 
 // pavyzdys 10 paskaitoje
 
@@ -101,118 +85,277 @@
 $biblioteka = array(
     // 1. romanai 
         array("kategorija"=>"romanai", 
-            "pavadinimas" => "knyga1","autorius" => "autorius1",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Mečetė sultono dukteriai","autorius" => "Elif Shafak",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"romanai",
-            "pavadinimas" => "knyga2","autorius" => "autorius2",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Seserys Chanel","autorius" => "Judithe Little",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"romanai",
-            "pavadinimas" => "knyga2","autorius" => "autorius3",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "NUSIKALTIMAS IR BAUSMĖ","autorius" => "Fiodoras Dostojevskis",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"romanai",
-            "pavadinimas" => "knyga4","autorius" => "autorius4",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "RAUPSUOTOJI","autorius" => "Helena Mniszek",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"romanai",
-            "pavadinimas" => "knyga5","autorius" => "autorius5",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "TOSKANOS VAIKAS.","autorius" => "Rhys Bowen",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
    
     // 2. istorines
         array("kategorija"=>"istorines",
-            "pavadinimas" => "knyga1","autorius" => "autorius1",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "PARTIZANŲ GRETOSE","autorius" => "Adolfas Ramanauskas-Vanagas",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"istorines",
-            "pavadinimas" => "knyga2","autorius" => "autorius2",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Kauno saulė","autorius" => "Arvydas Juozaitis",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"istorines",
-            "pavadinimas" => "knyga2","autorius" => "autorius3",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Kelionė be bilieto: Lietuvos kario keliu, 1915–1945","autorius" => "Ernestas Kuckailis",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"istorines",
-            "pavadinimas" => "knyga4","autorius" => "autorius4",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Po Černobylio katastrofos. Išlikimo vadovas","autorius" => "Kate Brown",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"istorines",
-            "pavadinimas" => "knyga5","autorius" => "autorius5",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Nindzė. Atskleidžiant mitą","autorius" => "Stephen Turnbull",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
    
     // 3. fantastines
         array("kategorija"=>"fantastines",
-            "pavadinimas" => "knyga1","autorius" => "autorius1",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Žmogus aukštoje pilyje (2021)","autorius" => "Philip K. Dick",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"fantastines",
-            "pavadinimas" => "knyga2","autorius" => "autorius2",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Kopa (2021)","autorius" => "Frank Herbert",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"fantastines",
-            "pavadinimas" => "knyga2","autorius" => "autorius3",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "PUIKUS NAUJAS PASAULIS","autorius" => "Aldous Huxley",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"fantastines",
-            "pavadinimas" => "knyga4","autorius" => "autorius4",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Hobitas (2020)","autorius" => "J. R. R. Tolkien",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"fantastines",
-            "pavadinimas" => "knyga5","autorius" => "autorius5",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "MARSIETIS","autorius" => "Andy Weir",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
     
     
     // 4. vaikiskos
         array("kategorija"=>"vaikiskos",
-            "pavadinimas" => "knyga1","autorius" => "autorius1",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Ką žmonės dirba visą dieną","autorius" => "Richard Scarry",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"vaikiskos",
-            "pavadinimas" => "knyga2","autorius" => "autorius2",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Herojai. Įkvepiantys žmonės ir jų neįtikėtini darbai","autorius" => "Jonny Marx",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"vaikiskos",
-            "pavadinimas" => "knyga2","autorius" => "autorius3",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Mijo, mano Mijo","autorius" => "Astrid Lindgren",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"vaikiskos",
-            "pavadinimas" => "knyga4","autorius" => "autorius4",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Lesė grįžta (2021)","autorius" => "Eric Knight",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"vaikiskos",
-            "pavadinimas" => "knyga5","autorius" => "autorius5",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),  
+            "pavadinimas" => "LAIMĖ YRA LAPĖ","autorius" => "Evelina Daciūtė, Aušra Kiudulaitė",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
     
     // 5. detektyvai 
         array("kategorija"=>"detektyvai",
-            "pavadinimas" => "knyga1","autorius" => "autorius1",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "SKERDIKO UPELIS","autorius" => "Rachel Caine",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"detektyvai",
-            "pavadinimas" => "knyga2","autorius" => "autorius2",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "PRANYKSTANTI ŽEMĖ","autorius" => "Julia Phillips",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"detektyvai",
-            "pavadinimas" => "knyga2","autorius" => "autorius3",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
-        array("kategorija"=>"vaikiskos",
-            "pavadinimas" => "knyga4","autorius" => "autorius4",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "Psichoterapeutas","autorius" => "B. A. Paris",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         array("kategorija"=>"detektyvai",
-            "pavadinimas" => "knyga5","autorius" => "autorius5",
-            "puslapiaiSK"=>rand(200,400)." puslapiai",
-            "kaina"=>rand(2,10).".".rand(0,99)."eur"),
+            "pavadinimas" => "KALTINIMO LIUDYTOJAS","autorius" => "Agatha Christie",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
+        array("kategorija"=>"detektyvai",
+            "pavadinimas" => "Antroji AŠ","autorius" => "Helen Phillips",
+            "puslapiai"=>rand(200,400)." puslapiai",
+            "kaina"=>rand(2,10).".".rand(0,99)." "."eur"),
         ); 
 
-var_dump($biblioteka); 
-    
+        $knygosKategorija="visos"; 
+
+        if(isset($_POST["visos"])) {
+            lenteleKnygos($biblioteka);
+       } else if(isset($_POST["romanai"])){
+           $knygosKategorija = "romanai";
+           braizykLentele($knygosKategorija, $biblioteka);
+       } else if(isset($_POST["istorines"])){
+           $knygosKategorija = "istorines";
+           braizykLentele($knygosKategorija, $biblioteka);
+         }  else if(isset($_POST["fantastines"])){
+               $knygosKategorija = "fantastines";
+               braizykLentele($knygosKategorija, $biblioteka);
+           }  else if(isset($_POST["vaikiskos"])){
+               $knygosKategorija = "vaikiskos";
+               braizykLentele($knygosKategorija, $biblioteka);
+           }  else if(isset($_POST["detektyvai"])){
+               $knygosKategorija = "detektyvai";
+               braizykLentele($knygosKategorija, $biblioteka);
+           } else {
+               lenteleKnygos($biblioteka);
+           }
+           
+       function braizykLentele($knygosKategorija, $biblioteka) {
+           $index=1;
+        echo "<table id='hoverable-data-table' class='table hover nowrap' 
+            style='width:100%'>";
+        echo "<thead>"; 
+            
+            echo "<tr>";  
+
+                echo "<th>";
+                echo "Numeris.";
+                echo "</th>";
+
+                echo "<th>";
+                echo "Pavadinimas";
+                echo "</th>";
+
+                echo "<th>";
+                echo "Autorius";
+                echo "</th>";
+
+                echo "<th>";
+                echo "Puslapiu skaicius";
+                echo "</th>";
+
+                echo "<th>";
+                echo "Kategorija";
+                echo "</th>";
+
+                echo "<th>";
+                echo "Kaina, eur.";
+                echo "</th>";
+        
+            echo "</tr>";   
+        echo "</thead>"; 
+
+    foreach($biblioteka as $element) {
+        if($element["kategorija"]==$knygosKategorija){
+        
+        echo "<tbody>"; 
+            echo "<tr>";
+                   echo "<td>";
+                   echo $index;
+                   echo "</td>";
+
+                   echo "<td>";
+                   echo $element["pavadinimas"];
+                   echo "</td>";
+
+                   echo "<td>";
+                   echo $element["autorius"];
+                   echo "</td>";
+
+                   echo "<td>";
+                   echo $element["puslapiai"];
+                   echo "</td>";
+
+                   echo "<td>";
+                   echo $element["kategorija"];
+                   echo "</td>";
+
+                   echo "<td>";
+                   echo $element["kaina"];
+                   echo "</td>";
+
+            echo "</tr>";
+        echo "</tbody>"; 
+                $index++;
+               }    
+            }
+        echo "</table>";
+            }
+                function lenteleKnygos($biblioteka) {
+                    $index=1;
+            
+            echo "<table id='hoverable-data-table' class='table hover nowrap' 
+                style='width:100%'>";
+                
+                echo "<thead>"; 
+                echo "<tr>";  
+
+                    echo "<th>";
+                    echo "Numeris";
+                    echo "</th>";
+                    
+                    echo "<th>";
+                    echo "Pavadinimas";
+                    echo "</th>";
+                    
+                    echo "<th>";
+                    echo "Autorius";
+                    echo "</th>";
+                    
+                    echo "<th>";
+                    echo "Puslapiu skaicius";
+                    echo "</th>";
+                    
+                    echo "<th>";
+                    echo "Kategorija";
+                    echo "</th>";
+                    
+                    echo "<th>";
+                    echo "Kaina, eur.";
+                    echo "</th>";
+
+                echo "</tr>";
+
+            foreach($biblioteka as $element) {
+                        echo "<tr>";
+
+                            echo "<td>";
+                            echo $index;
+                            echo "</td>";
+
+                            echo "<td>";
+                            echo $element["pavadinimas"];
+                            echo '</td>';
+
+                            echo "<td>";
+                            echo $element["autorius"];
+                            echo "</td>";
+
+                            echo "<td>";
+                            echo $element["puslapiai"];
+                            echo "</td>";
+                            
+                            echo "<td>";
+                            echo $element["kategorija"];
+                            echo "</td>";
+                            
+                            echo "<td>";
+                            echo $element["kaina"];
+                            echo "</td>";
+                        echo "</tr>";
+                        $index++;
+                        }
+                                            
+                echo "</table>";
+                    }
 ?>
  
 
